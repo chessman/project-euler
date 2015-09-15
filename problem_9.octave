@@ -1,0 +1,15 @@
+
+s = 1000;
+
+for a = 1:s
+  for b = 1:(s - a)
+    sq_c = a^2 + b^2;
+    if sq_c == ( s - a - b )^2
+        a
+        b
+        sqrt( sq_c )
+	a * b * sqrt( sq_c )
+	return
+    end
+  end
+end
