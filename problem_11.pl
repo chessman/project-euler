@@ -66,22 +66,13 @@ for( my $i = 0; $i < $size - 4; $i++ ) {
 }
 
 for( my $i = 0; $i < $size - 4; $i++ ) {
-  for( my $j = 0; $j < $size - 4; $j++ ) {
+  for( my $j = 4; $j < $size - 4; $j++ ) {
     my $val = $digits[ coord $i, $j ] *
-              $digits[ coord $i + 1, $j + 1 ] *
-              $digits[ coord $i + 2, $j + 2 ] *
-              $digits[ coord $i + 3, $j + 3 ];
-
-    $prod = $val if $val > $prod;
-
-    if( $j > 3 ) {
-      $val = $digits[ coord $i, $j ] *
-             $digits[ coord $i + 1, $j - 1 ] *
-             $digits[ coord $i + 2, $j - 2 ] *
-             $digits[ coord $i + 3, $j - 3 ];
+              $digits[ coord $i + 1, $j - 1 ] *
+              $digits[ coord $i + 2, $j - 2 ] *
+              $digits[ coord $i + 3, $j - 3 ];
 
       $prod = $val if $val > $prod;
-    }
   }
 }
 
